@@ -6,6 +6,28 @@
     <title>Formulario de Cotización</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
+    
+    <!-- === INICIO: ESTILOS PARA EL BOTÓN OCULTO === -->
+    <style>
+        #admin-link {
+            position: fixed; /* Lo fija en la pantalla */
+            bottom: 15px;
+            right: 15px;
+            color: #888; /* Un color gris muy sutil */
+            font-size: 16px;
+            opacity: 0.1; /* Lo hace casi invisible */
+            transition: opacity 0.3s ease, color 0.3s ease; /* Transición suave */
+            z-index: 9999; /* Se asegura de que esté por encima de todo */
+            text-decoration: none;
+        }
+
+        #admin-link:hover {
+            opacity: 1; /* Se revela completamente al pasar el mouse */
+            color: #6a0dad; /* Cambia a un color violeta para destacar */
+        }
+    </style>
+    <!-- === FIN: ESTILOS PARA EL BOTÓN OCULTO === -->
+
 </head>
 <body>
     <div class="container">
@@ -46,44 +68,44 @@
 
                 <!-- Paso 2: Tipo de web -->
                 <div class="step" id="step-2">
-                     <h2 class="section-title">¿Qué tipo de sitio web necesitas?</h2>
-                     <p class="section-description">Elige la opción que mejor se adapte a tu proyecto.</p>
-                     <div id="tipos-container" class="tipos-grid"></div>
-                     <div class="navigation-buttons">
-                         <button class="btn btn-secondary" id="back-step-2" type="button"><i class="fas fa-arrow-left"></i> Atrás</button>
-                     </div>
+                    <h2 class="section-title">¿Qué tipo de sitio web necesitas?</h2>
+                    <p class="section-description">Elige la opción que mejor se adapte a tu proyecto.</p>
+                    <div id="tipos-container" class="tipos-grid"></div>
+                    <div class="navigation-buttons">
+                        <button class="btn btn-secondary" id="back-step-2" type="button"><i class="fas fa-arrow-left"></i> Atrás</button>
+                    </div>
                 </div>
 
                 <!-- Paso 3: Preguntas -->
                 <div class="step" id="step-3">
-                     <h2 class="section-title" id="preguntas-titulo">Cuéntanos más sobre tu proyecto</h2>
-                     <p class="section-description" id="preguntas-descripcion">Tus respuestas nos ayudarán a darte una cotización más precisa.</p>
-                     <div id="panel-dinamico" class="preguntas-panel"></div>
-                     <div class="seccion-actions">
-                         <button class="btn btn-secondary" id="prev-section-btn" type="button"><i class="fas fa-arrow-left"></i> Anterior</button>
-                         <div id="seccion-info"></div>
-                         <button class="btn btn-primary" id="next-section-btn" type="button">Siguiente <i class="fas fa-arrow-right"></i></button>
-                     </div>
+                    <h2 class="section-title" id="preguntas-titulo">Cuéntanos más sobre tu proyecto</h2>
+                    <p class="section-description" id="preguntas-descripcion">Tus respuestas nos ayudarán a darte una cotización más precisa.</p>
+                    <div id="panel-dinamico" class="preguntas-panel"></div>
+                    <div class="seccion-actions">
+                        <button class="btn btn-secondary" id="prev-section-btn" type="button"><i class="fas fa-arrow-left"></i> Anterior</button>
+                        <div id="seccion-info"></div>
+                        <button class="btn btn-primary" id="next-section-btn" type="button">Siguiente <i class="fas fa-arrow-right"></i></button>
+                    </div>
                 </div>
                 
                 <!-- Paso 4: Resumen y Enviar -->
                 <div class="step" id="step-4">
-                     <h2 class="section-title">¡Casi listo! Revisa tu solicitud</h2>
-                     <p class="section-description">Confirma que todo esté correcto antes de enviar.</p>
-                     <div id="resumen-container" class="resumen"></div>
-                     <div class="navigation-buttons">
-                         <button class="btn btn-secondary" id="back-step-4" type="button"><i class="fas fa-arrow-left"></i> Atrás</button>
-                         <button class="btn btn-primary" id="submit-btn" type="submit"><i class="fas fa-paper-plane"></i> Enviar solicitud</button>
-                     </div>
+                    <h2 class="section-title">¡Casi listo! Revisa tu solicitud</h2>
+                    <p class="section-description">Confirma que todo esté correcto antes de enviar.</p>
+                    <div id="resumen-container" class="resumen"></div>
+                    <div class="navigation-buttons">
+                        <button class="btn btn-secondary" id="back-step-4" type="button"><i class="fas fa-arrow-left"></i> Atrás</button>
+                        <button class="btn btn-primary" id="submit-btn" type="submit"><i class="fas fa-paper-plane"></i> Enviar solicitud</button>
+                    </div>
                 </div>
 
                 <!-- Paso 5: Agradecimiento -->
                 <div class="step" id="step-5">
-                     <div class="thank-you-message">
-                         <i class="fas fa-check-circle"></i>
-                         <h2 class="section-title">¡Gracias por tu solicitud!</h2>
-                         <p class="section-description">Hemos recibido tu información. Nos pondremos en contacto contigo a la brevedad.</p>
-                     </div>
+                    <div class="thank-you-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h2 class="section-title">¡Gracias por tu solicitud!</h2>
+                        <p class="section-description">Hemos recibido tu información. Nos pondremos en contacto contigo a la brevedad.</p>
+                    </div>
                 </div>
             </form>
         </div>
@@ -105,6 +127,12 @@
     </div>
 
     <script src="js/app.js"></script>
+
+    <!-- === INICIO: BOTÓN OCULTO DE ADMIN === -->
+    <a href="/login.html" id="admin-link" title="Acceso de Administrador">
+        <i class="fas fa-cog"></i> <!-- Ícono de engranaje -->
+    </a>
+    <!-- === FIN: BOTÓN OCULTO DE ADMIN === -->
+
 </body>
 </html>
-
