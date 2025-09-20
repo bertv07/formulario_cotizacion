@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Cotización</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="welcome-heading">Hola, bienvenid@</h1>
+            <p class="subtitle">Sistema de cotización para tu sitio web</p>
+        </header>
+
+        <div class="form-container">
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-step" data-step="3">3</div>
+                <div class="progress-step" data-step="4">4</div>
+            </div>
+
+            <form id="cotizacion-form" novalidate>
+                <!-- Paso 1: Información inicial -->
+                <div class="step active" id="step-1">
+                    <h2 class="section-title">Comencemos con tu información</h2>
+                    <p class="section-description">Por favor, completa tus datos para poder contactarte.</p>
+                    <div class="input-group">
+                        <label for="nombre">Tu nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="empresa">Nombre de tu empresa (Opcional)</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Ej: Mi Negocio Online">
+                    </div>
+                    <div class="input-group">
+                        <label for="telefono">Tu número de teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: +58 412 1234567" required>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="btn btn-primary" id="next-step-1" type="button">Siguiente <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Tipo de web -->
+                <div class="step" id="step-2">
+                     <h2 class="section-title">¿Qué tipo de sitio web necesitas?</h2>
+                     <p class="section-description">Elige la opción que mejor se adapte a tu proyecto.</p>
+                     <div id="tipos-container" class="tipos-grid"></div>
+                     <div class="navigation-buttons">
+                         <button class="btn btn-secondary" id="back-step-2" type="button"><i class="fas fa-arrow-left"></i> Atrás</button>
+                     </div>
+                </div>
+
+                <!-- Paso 3: Preguntas -->
+                <div class="step" id="step-3">
+                     <h2 class="section-title" id="preguntas-titulo">Cuéntanos más sobre tu proyecto</h2>
+                     <p class="section-description" id="preguntas-descripcion">Tus respuestas nos ayudarán a darte una cotización más precisa.</p>
+                     <div id="panel-dinamico" class="preguntas-panel"></div>
+                     <div class="seccion-actions">
+                         <button class="btn btn-secondary" id="prev-section-btn" type="button"><i class="fas fa-arrow-left"></i> Anterior</button>
+                         <div id="seccion-info"></div>
+                         <button class="btn btn-primary" id="next-section-btn" type="button">Siguiente <i class="fas fa-arrow-right"></i></button>
+                     </div>
+                </div>
+                
+                <!-- Paso 4: Resumen y Enviar -->
+                <div class="step" id="step-4">
+                     <h2 class="section-title">¡Casi listo! Revisa tu solicitud</h2>
+                     <p class="section-description">Confirma que todo esté correcto antes de enviar.</p>
+                     <div id="resumen-container" class="resumen"></div>
+                     <div class="navigation-buttons">
+                         <button class="btn btn-secondary" id="back-step-4" type="button"><i class="fas fa-arrow-left"></i> Atrás</button>
+                         <button class="btn btn-primary" id="submit-btn" type="submit"><i class="fas fa-paper-plane"></i> Enviar solicitud</button>
+                     </div>
+                </div>
+
+                <!-- Paso 5: Agradecimiento -->
+                <div class="step" id="step-5">
+                     <div class="thank-you-message">
+                         <i class="fas fa-check-circle"></i>
+                         <h2 class="section-title">¡Gracias por tu solicitud!</h2>
+                         <p class="section-description">Hemos recibido tu información. Nos pondremos en contacto contigo a la brevedad.</p>
+                     </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Indicador de Carga -->
+    <div class="loading" id="loading-indicator">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Enviando tu solicitud...</p>
+    </div>
+
+    <!-- NUEVO: Estructura del Modal para Alertas -->
+    <div class="modal" id="alert-modal">
+        <div class="modal-content">
+            <span class="close-modal-btn">&times;</span>
+            <h2 id="modal-title">Título del Aviso</h2>
+            <p id="modal-message">Este es el cuerpo del mensaje de aviso.</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+

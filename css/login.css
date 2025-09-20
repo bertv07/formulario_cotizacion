@@ -1,0 +1,127 @@
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-card: #1e1e1e;
+  --accent-primary: #8a2be2;
+  --accent-secondary: #6a0dad;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --error: #ff3333;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-card);
+  padding: 40px 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.login-header .fa-shield-halved {
+  font-size: 3rem;
+  color: var(--accent-primary);
+  margin-bottom: 15px;
+}
+
+.login-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.login-header p {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group .fas {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  background: var(--bg-secondary);
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3);
+}
+
+.btn-login {
+  width: 100%;
+  padding: 15px;
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-login:hover {
+  background: var(--accent-secondary);
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: var(--error);
+  margin-top: 15px;
+  height: 20px;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

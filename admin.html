@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <!-- NUEVO: Librería para los gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Panel de Administración</h1>
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="btn-stats"><i class="fas fa-chart-bar"></i> Estadísticas</button>
+                <button class="btn btn-secondary" id="btn-export"><i class="fas fa-download"></i> Exportar CSV</button>
+                <button class="btn btn-danger" id="btn-logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <main id="listado" class="solicitudes-grid">
+            <!-- Las tarjetas de solicitud se cargarán aquí -->
+            <div class="empty-state">
+                <i class="fas fa-spinner fa-spin"></i>
+                <h3>Cargando solicitudes...</h3>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para ver detalles de una solicitud -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-btn" id="close-details-modal">&times;</span>
+            <h2 id="modal-title">Detalles de la Solicitud</h2>
+            <div id="modal-message"></div>
+        </div>
+    </div>
+
+    <!-- Modal para ver estadísticas -->
+    <div id="stats-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-btn" id="close-stats-modal">&times;</span>
+            <h2>Estadísticas de Solicitudes</h2>
+            <div class="chart-container">
+                <!-- CORREGIDO: Se añadió el canvas para el gráfico -->
+                <canvas id="statsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
+
